@@ -1,0 +1,19 @@
+# 16.11.15	00.46
+Начал на домашнем ноуте.
+Установил Git (21Мб), дальше по Пьюривалл
+
+`git config --global user.name "altair-f"
+git config --global user.email altair-f@narod.ru`
+
+Решил не отслеживать контру непосредственно на месте, чтобы не путать с синхронизацией DropBox, а создать отдельную папку...
+Но создалв дропбоксе!
+
+`/home/a/Dropbox/back_light/Linux-digging/Git`
+
+Делаем
+
+`git init`
+
+
+
+

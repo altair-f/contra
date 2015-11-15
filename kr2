@@ -1,0 +1,158 @@
+
+Nstud' = 20;
+
+(* снова математика! рандом и все дела *)
+
+
+"this is the control work 2, kr2">>kr2_sols;
+Unprotect[C];
+
+Do[
+
+Print["\:0422\:0440\:2116\:0448\:0440\:044d\:0452   ",k'];
+Print[];
+
+" ">>>kr2_sols;
+" ">>>kr2_sols;
+k'>>>kr2_sols;
+
+Clear["`*"];
+Clear[C];
+
+
+(*------------  TM section ---------*)
+
+lenA=5;
+lenB=6;
+lenC=7;
+
+
+aLis = {Random[Integer, {1, 10}]}; 
+Do[aLis = aLis~Join~{aLis[[i]] + Random[Integer, {1, 2}]}, {i, lenA}]; 
+
+
+bLis = {Random[Integer, {1, 10}]}; 
+Do[bLis = bLis~Join~{bLis[[i]] + Random[Integer, {1, 2}]}, {i, lenB}]; 
+
+
+cLis = {Random[Integer, {1, 10}]}; 
+Do[cLis = cLis~Join~{cLis[[i]] + Random[Integer, {1, 2}]}, {i, lenC}]; 
+
+
+
+
+{num1, num2} = Table[Random[Integer,{1,3}],{i,2}];
+
+oper1 = {Union, Intersection, Complement}[[num1]];
+oper2 = {Union, Intersection, Complement}[[num2]];
+
+operAlias1 = {"\[Union]", "\[Intersection]", "\\"}[[num1]];
+operAlias2 = {"\[Union]", "\[Intersection]", "\\"}[[num2]];
+
+
+
+
+{num1, num2, num3} = Permutations[{1,2,3}] [[Random[Integer,{1,6}]]];
+
+lisAlias1 = {A,B,C}[[num1]];
+lisAlias2 = {A,B,C}[[num2]];
+lisAlias3 = {A,B,C}[[num3]];
+
+lis1 = {aLis, bLis, cLis}[[num1]];
+lis2 = {aLis, bLis, cLis}[[num2]];
+lis3 = {aLis, bLis, cLis}[[num3]];
+
+
+M = (lis1~oper1~lis2)~oper2~lis3;
+
+M>>>kr2_sols;
+" ">>>kr2_sols;
+
+Print["1) \:0424\:0440\:044d\:044e :           A = ",aLis,",       B = ",bLis,",       C = ",cLis];
+
+Print["   \:042d\:0440\:0449\:0452\:0448 :           (",lisAlias1," ",operAlias1," ",lisAlias2,") ",operAlias2," ",lisAlias3];
+
+
+
+(*-------------- ML section -------------*)
+
+
+
+
+
+
+w={True->1,False->0};
+
+
+
+Clear[A,B,C];
+
+lisABC={A,B,C};
+lisArgs=Permutations[Join[lisABC,{lisABC[[Random[Integer,{1,3}]]]}]][[Random[Integer,{1,12}]]];
+
+numNot=Random[Integer,{1,4}];
+lisArgs=lisArgs/.lisArgs[[numNot]]->Not[lisArgs[[numNot]]];
+
+
+
+lisOper={And,Or,Implies};
+lisOperAlias={"\[And]","\[Or]","\[Implies]"};
+operNum1=Random[Integer,{1,3}];
+operNum2=Random[Integer,{1,3}];
+operNum3=Random[Integer,{1,3}];
+
+oper1=lisOper[[operNum1]];
+oper2=lisOper[[operNum2]];
+oper3=lisOper[[operNum3]];
+
+
+Print["2) \:0431\:044e\:0451\:0452\:0440\:0442\:0448\:0452\:045c \:0452\:0440\:0441\
+\:044b\:0448\:0456\:0453 \:0448\:0451\:0452\:0448\:044d\:044d\:044e\:0451\
+\:0452\:0448 :      ",
+"     (",lisArgs[[1]]," ",lisOperAlias[[operNum1]]," ",lisArgs[[2]],") ",lisOperAlias[[operNum2]]," (",
+	lisArgs[[3]]," ",lisOperAlias[[operNum3]]," ",lisArgs[[4]],")" ];
+
+lisVal={{0,0,0},{0,0,1},{0,1,0},{0,1,1},{1,0,0},{1,0,1},{1,1,0},{1,1,1}}/.{0->False,1->True};
+
+
+
+
+Do[{A,B,C}=lisVal[[i]];
+	M=oper2[oper1[lisArgs[[1]],lisArgs[[2]]],oper3[lisArgs[[3]],lisArgs[[4]]]];
+
+	q={A/.w,B/.w,C/.w,oper1[lisArgs[[1]],lisArgs[[2]]]/.w,oper3[lisArgs[[3]],lisArgs[[4]]]/.w,M/.w};
+	q>>>kr2_sols;
+,{i,8}];
+
+
+
+
+
+
+(*-------------- ComplexNumber section-----------*)
+
+{a,b,c,d}=Table[Random[Integer,{1,7}]*(-1)^Random[Integer,{0,1}],{i,4}];
+
+Print["3) \:0424\:0440\:044d\:044e :           ",Subscript[z,1]," = ",a+b I,"        ",Subscript[z,2]," = ",c+d I];
+
+Print["   \:042d\:0440\:0449\:0452\:0448 :           ",Subscript[z,1]+Subscript[z,2],",       ",Subscript[z,1]Subscript[z,2],
+			",         ",Subscript[z,1]/Subscript[z,2]];
+Print["___________________________________________________________________________________"];
+
+z1=a+b I;z2=c+d I;
+z1*z2>>>kr2_sols;
+z1/z2>>>kr2_sols;
+
+
+
+
+
+
+,{k',Nstud'}]
+
+
+
+
+
+
+
